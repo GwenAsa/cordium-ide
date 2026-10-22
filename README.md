@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/cordium-banner.png" alt="Cordium Banner" width="100%" />
+</div>
+
+<div align="center">
 
 # Cordium
 
