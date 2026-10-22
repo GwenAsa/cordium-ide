@@ -9,7 +9,7 @@
 ### The Purpose-Built IDE for Discord Bot Developers
 
 [![Discord](https://img.shields.io/badge/Discord-Developer_Ecosystem-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com)
-[![Version](https://img.shields.io/badge/Release-v0.5.0_Beta-57F287?style=for-the-badge)](https://github.com/YOUR_USERNAME/cordium/releases)
+[![Version](https://img.shields.io/badge/Release-v0.5.0_Beta-57F287?style=for-the-badge)](https://github.com/GwenAsa/cordium-ide/releases)
 [![Built With Tauri](https://img.shields.io/badge/Engine-Tauri_%2B_CodeMirror_6-EB459E?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app)
 [![Supported Libraries](https://img.shields.io/badge/SDKs-discord.py_%7C_discord.js_v14-FEE75C?style=for-the-badge&logo=python&logoColor=black)](#-supported-libraries)
 
