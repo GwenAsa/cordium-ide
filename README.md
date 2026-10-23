@@ -55,10 +55,11 @@ By replacing memory-heavy web containers with a lean **Tauri native core**, Cord
 * **Auto-Reload on Save:** Seamless hot-reloading that automatically restarts your active bot process whenever source files are updated.
 
 ---
+## Official Visual Themes
+--
 <div align="center">
   <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/Cordium_ Neon Discord IDE Showcase.png" alt="Cordium Banner" width="100%" />
 </div>
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23EB459E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='13.5' cy='6.5' r='.5'/><circle cx='17.5' cy='10.5' r='.5'/><circle cx='8.5' cy='7.5' r='.5'/><circle cx='6.5' cy='12.5' r='.5'/><path d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.92 0 1.7-.72 1.7-1.63 0-.43-.17-.83-.44-1.13-.27-.3-.44-.7-.44-1.13 0-.91.73-1.64 1.64-1.64H17c2.76 0 5-2.24 5-5 0-4.42-4.48-8-10-8z'/></svg>" valign="middle" /> Official Visual Themes
 
 Cordium includes **18 tailored theme presets** configured specifically for high-contrast syntax visibility and long coding sessions:
 
