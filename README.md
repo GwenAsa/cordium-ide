@@ -56,7 +56,6 @@ By replacing memory-heavy web containers with a lean **Tauri native core**, Cord
 
 ---
 ## Official Visual Themes
---
 <div align="center">
   <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/Cordium_ Neon Discord IDE Showcase.png" alt="Cordium Banner" width="100%" />
 </div>
