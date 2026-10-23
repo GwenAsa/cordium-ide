@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/cordium-banner.png" alt="Cordium Banner" width="100%" />
+  <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/file_00000000ff4081f4aa62f26d9286dc0e.png" alt="Cordium Banner" width="100%" />
 </div>
 
 <div align="center">
