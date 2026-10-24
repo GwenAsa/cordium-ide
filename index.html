@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cordium</title>
+</head>
+<body>
+  <div id="app">
+    <nav id="rail">
+      <div class="rail-logo"><img src="/src/logo.png" alt="Cordium" /></div>
+      <button class="rbtn" id="btn-explorer" data-icon="sidebar" title="Toggle explorer (Ctrl+B)"></button>
+      <button class="rbtn" id="btn-open" data-icon="folder" title="Open folder"></button>
+      <button class="rbtn" id="btn-search-rail" data-icon="search" title="Search in project (Ctrl+Shift+F)"></button>
+      <div class="rsep"></div>
+      <button class="rbtn" id="btn-palette" data-icon="command" title="Command palette (Ctrl+Shift+P)"></button>
+      <button class="rbtn" id="btn-slash" data-icon="zap" title="Slash command builder"></button>
+      <button class="rbtn" id="btn-embed" data-icon="layout" title="Embed builder"></button>
+      <button class="rbtn" id="btn-invite" data-icon="link" title="Invite link &amp; intents"></button>
+      <button class="rbtn" id="btn-env" data-icon="key" title="Environment (.env)"></button>
+      <button class="rbtn" id="btn-modules" data-icon="package" title="Ready-made modules"></button>
+      <button class="rbtn" id="btn-test" data-icon="chat" title="Test chat"></button>
+      <div class="spacer"></div>
+      <button class="rbtn badge" id="btn-new-py" title="New discord.py bot"><span>PY</span></button>
+      <button class="rbtn badge" id="btn-new-js" title="New discord.js bot"><span>JS</span></button>
+      <button class="rbtn" id="btn-theme" data-icon="droplet" title="Themes"></button>
+    </nav>
+    <aside id="sidebar">
+      <header>
+        <span id="project-name">NO FOLDER OPEN</span>
+        <button class="mini on" id="tab-explorer" data-icon="folder" title="Explorer"></button>
+        <button class="mini" id="tab-search" data-icon="search" title="Search"></button>
+        <button class="mini" id="tab-outline" data-icon="list" title="Bot outline"></button>
+        <button class="mini" id="btn-collapse" data-icon="left" title="Hide explorer"></button>
+      </header>
+      <div id="tree"></div>
+      <div id="search-panel">
+        <input id="s-find" placeholder="Search in project" autocomplete="off" spellcheck="false" />
+        <input id="s-replace" placeholder="Replace with" autocomplete="off" spellcheck="false" />
+        <div class="srow"><label><input type="checkbox" id="s-case" /> Aa</label><span class="spacer"></span><button id="s-go">Search</button><button id="s-all">Replace all</button></div>
+        <div id="s-results"></div>
+      </div>
+      <div id="outline-panel"><div id="outline-list"></div></div>
+      <div id="side-grip"></div>
+    </aside>
+    <main id="main">
+      <div id="tabs"></div>
+      <div id="editor"></div>
+      <section id="console">
+        <div id="term-grip"></div>
+        <header class="chead">
+          <button class="ctab on" id="ctab-out">Output</button>
+          <button class="ctab" id="ctab-term">Terminal</button>
+          <span class="spacer"></span>
+          <button id="btn-run" class="cbtn run"><i data-icon="play"></i>Run</button>
+          <button id="btn-stop" class="cbtn stop" disabled><i data-icon="stop"></i>Stop</button>
+          <button id="btn-clear" class="cbtn">Clear</button>
+          <button id="btn-close-term" class="cbtn ghost" data-icon="x" title="Hide panel"></button>
+        </header>
+        <pre id="log"></pre>
+        <div id="xterm"></div>
+      </section>
+      <footer id="status">
+        <button id="btn-term" title="Toggle terminal (Ctrl+`)"><i data-icon="terminal"></i>Terminal<b id="term-badge"></b></button>
+        <span><i class="dot" id="st-dot"></i><span id="st-bot">Bot stopped</span></span>
+        <button id="btn-ar" class="sbtn">&#8635; Auto-restart: off</button>
+        <span class="spacer"></span>
+        <span id="st-problems">&#10004; No problems</span>
+        <span id="st-git"></span>
+        <button id="btn-font" title="Fonts">Aa</button>
+        <button id="btn-wrap" title="Toggle word wrap (Alt+Z)">Wrap: off</button>
+        <span id="st-pos">Ln 1, Col 1</span>
+        <span id="st-ver">Cordium 0.7.0</span>
+      </footer>
+    </main>
+    <aside id="test">
+      <header><span class="title"># test-chat</span><span class="spacer"></span><button id="btn-test-refresh">Reload</button></header>
+      <div id="cmd-list"></div>
+      <div id="chat"></div>
+      <div id="chat-bar"><input id="chat-input" placeholder="/ping  or  /command arg=value" autocomplete="off" /></div>
+    </aside>
+  </div>
+  <div id="scrim"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
