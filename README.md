@@ -4,112 +4,197 @@
 
 <div align="center">
 
+<img src="./cordium-icons/cordium-logo.png" alt="Cordium logo" width="128" />
+
 # Cordium
 
 ### The Purpose-Built IDE for Discord Bot Developers
 
-[![Discord](https://img.shields.io/badge/Discord-Developer_Ecosystem-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com)
-[![Version](https://img.shields.io/badge/Release-v0.5.0_Beta-57F287?style=for-the-badge)](https://github.com/GwenAsa/cordium-ide/releases)
-[![Built With Tauri](https://img.shields.io/badge/Engine-Tauri_%2B_CodeMirror_6-EB459E?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app)
-[![Supported Libraries](https://img.shields.io/badge/SDKs-discord.py_%7C_discord.js_v14-FEE75C?style=for-the-badge&logo=python&logoColor=black)](#-supported-libraries)
+[![Release](https://img.shields.io/badge/Release-v0.7.0-57F287?style=for-the-badge)](https://github.com/GwenAsa/cordium-ide/releases)
+[![Platform](https://img.shields.io/badge/Platform-Linux_(.deb)-5865F2?style=for-the-badge&logo=linux&logoColor=white)](#download--install)
+[![Built With Tauri](https://img.shields.io/badge/Engine-Tauri_2_%2B_CodeMirror_6-EB459E?style=for-the-badge&logo=tauri&logoColor=white)](https://tauri.app)
+[![Supported Libraries](https://img.shields.io/badge/SDKs-discord.py_%7C_discord.js_v14-FEE75C?style=for-the-badge&logo=python&logoColor=black)](#code-intelligence)
 
 <p align="center">
-  <b>Fast. Native. Lightweight. Built from the ground up to streamline Discord application creation.</b>
+  <b>A native, Discord-styled editor with real code intelligence for discord.py and discord.js.</b>
 </p>
 
-[Quick Start](#-getting-started) • [Download Releases](#-download--install) • [Feature Highlights](#-core-features) • [Documentation](#-shortcuts--cheatsheet)
+[Download](#download--install) &bull; [Features](#core-features) &bull; [Screenshots](#screenshots) &bull; [Shortcuts](#shortcuts) &bull; [Build from source](#build-from-source)
 
 ---
 
 </div>
 
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%235865F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='16' rx='2'/><rect x='9' y='9' width='6' height='6'/><line x1='9' y1='1' x2='9' y2='4'/><line x1='15' y1='1' x2='15' y2='4'/><line x1='9' y1='20' x2='9' y2='23'/><line x1='15' y1='20' x2='15' y2='23'/><line x1='20' y1='9' x2='23' y2='9'/><line x1='20' y1='15' x2='23' y2='15'/><line x1='1' y1='9' x2='4' y2='9'/><line x1='1' y1='15' x2='4' y2='15'/></svg>" valign="middle" /> Overview
+## <img src="./cordium-icons/svg/overview.svg" width="22" height="22" valign="middle" /> Overview
 
-**Cordium** is a high-performance integrated development environment specifically tuned for constructing, debugging, and deploying Discord bots.
+**Cordium** is a desktop IDE focused on one job: building, testing and running Discord bots with **discord.py** and **discord.js**.
 
-By replacing memory-heavy web containers with a lean **Tauri native core**, Cordium delivers near-zero runtime latency, sub-3MB binary sizes, and minimal RAM overhead—giving your hardware full headroom to power your local bot instances and interactive test routines.
+It uses a Tauri (Rust) shell with the operating system's own web view instead of bundling a browser, so the installer is only **~8 MB**. The UI follows the Discord desktop app (blurple/dark palette, server-style rail, floating panels) and adapts to any window size, so it works well in a half-screen layout next to your browser.
 
----
-
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%235865F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>" valign="middle" /> Core Features
-
-### <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2357F287' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z'/><path d='m10 8-2 2 2 2'/><path d='m14 8 2 2-2 2'/></svg>" valign="middle" /> Sandbox Test Chat & Offline Harness
-* **Zero-Gateway Testing:** Run application commands (`/slash`, subcommands, parameters) inside an isolated local execution harness without connecting to Discord production WebSocket gateways or leaking bot tokens.
-* **Pixel-Perfect Embed Engine:** Instant native visual feedback for message embeds, components (Buttons, Selects), inline fields, and ephemeral responses matching Discord's exact client spec.
-
-### <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2357F287' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z'/></svg>" valign="middle" /> Visual Developer Utilities
-* **Interactive Slash Command Generator:** Form-driven parameters (`string`, `integer`, `boolean`, `required/optional`) that output clean, production-ready initialization code for both Python and JavaScript.
-* **Live Embed Architect:** Drag, drop, and construct multi-field embeds with real-time preview and instant code insertion directly into your active buffer.
-* **Token Guard & Environment Security:** Auto-detects unencrypted tokens, auto-masks credentials in `.env`, automatically generates `.gitignore` policies, and alerts developers before committing sensitive keys.
-* **Intents & Permissions Visualizer:** Toggle Gateway Intents and OAuth2 scopes to automatically compute bitwise permission integers and construct instant bot invite URLs.
-
-### <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2357F287' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='16 18 22 12 16 6'/><polyline points='8 6 2 12 8 18'/></svg>" valign="middle" /> Developer-Centric Code Engine
-* **Tauri Native Core:** Ultra-lightweight footprint (~2.2MB installer size) powered by native OS webview backends for lightning-fast launch times and low CPU/RAM consumption.
-* **Discord-Aware Autocomplete:** Contextual, intelligent completion for `discord.py` (`commands.*`, `app_commands.*`, `interaction.*`, `ctx.*`) and `discord.js` (`GatewayIntentBits.*`, `Events.*`, `SlashCommandBuilder.*`).
-* **Snippets Engine:** Expand standard bot workflows (`slash`, `cog`, `listener`, `embed`, `button`) instantly with tab-stop navigation.
-* **Active Traceback Jumper:** Click straight on console stack trace paths (e.g., `main.py:42`) to jump immediately to the corresponding source line in the active tab.
-
-### <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2357F287' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='4 17 10 11 4 5'/><line x1='12' y1='19' x2='20' y2='19'/></svg>" valign="middle" /> System Control & PTY Terminal
-* **Integrated Interactive PTY:** Fully functional CLI supporting `pip`, `npm`, `git`, and interactive password entry with background execution status indicators.
-* **Automated Dependency Setup:** Provision isolated Python virtual environments (`.venv`) or trigger `npm install` with a single click without polluting global runtimes.
-* **Auto-Reload on Save:** Seamless hot-reloading that automatically restarts your active bot process whenever source files are updated.
+> **About memory:** the shell is light, but code intelligence is real work. Measured on Linux in a virtual display: **~350 MB** idle, **~560 MB** with Python intelligence active and **~630 MB** with JavaScript/TypeScript intelligence active. If RAM is tight, switch on **Light mode** (see [Memory & Light mode](#memory--light-mode)).
 
 ---
-## Official Visual Themes
+
+## Screenshots
+
 <div align="center">
-  <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/Cordium_ Neon Discord IDE Showcase.png" alt="Cordium Banner" width="100%" />
+  <img src="./docs/screenshots/autocomplete.png" alt="Python autocomplete from the real discord.py source" width="49%" />
+  <img src="./docs/screenshots/test-chat.png" alt="Test Chat running /userinfo and rendering the embed" width="49%" />
+  <br />
+  <img src="./docs/screenshots/themes.png" alt="18 built-in themes" width="49%" />
 </div>
 
-Cordium includes **18 tailored theme presets** configured specifically for high-contrast syntax visibility and long coding sessions:
+---
 
-| Theme Category | Available Presets |
-| :--- | :--- |
-| **Discord Ecosystem** | `Discord Dark` (Official Blurple/Dark), `Midnight`, `Discord Light` |
-| **Developer Favorites** | `Dracula`, `Nord`, `Tokyo Night`, `Monokai`, `One Dark`, `Catppuccin Mocha` |
-| **Vibrant & Specialized** | `Cyberpunk`, `Synthwave`, `Gruvbox`, `Rosé Pine`, `Solarized Dark/Light`, `Ocean` |
+## <img src="./cordium-icons/svg/features.svg" width="22" height="22" valign="middle" /> Core Features
 
-*Built-in typography includes pre-bundled `Inter` and `JetBrains Mono` with full font-ligature support enabled by default.*
+### <img src="./cordium-icons/svg/intel.svg" width="18" height="18" valign="middle" /> Code Intelligence
+* **Python:** [Jedi](https://github.com/davidhalter/jedi) analyses your code with the Python standard library stubs, your project's `.venv`, and a **bundled copy of the discord.py source**, so `discord.*`, `commands.*`, `app_commands.*` and everything else complete even before you install anything. Hover shows the real signature and docstring.
+* **JavaScript and TypeScript:** the TypeScript language service runs in a Web Worker with bundled **discord.js v14 typings** (including `@discordjs/builders`, `discord-api-types`), Node.js types and the ES2022 library. Completion with signatures, hover, and real type errors in `.ts` files.
+* **Discord bot linter with quick fixes:** missing `await` on `interaction.response.send_message(...)`, blocking `time.sleep()` / `requests` in an async bot, reading `message.content` without the Message Content intent. One click applies the fix.
+* **Snippets:** built-in (`slash`, `cog`, `listener`, `embed`, `button`, `loop`, ...) plus your own (palette: *My snippets*).
+* **Click-through errors:** stack-trace paths in the terminal output (`main.py:42`) open the file at that line. Syntax errors are marked after every save.
+
+### <img src="./cordium-icons/svg/chat.svg" width="18" height="18" valign="middle" /> Test Chat (no Discord, no token)
+* Runs your slash commands against a **fake interaction**, for **discord.py** (`cogs/`) and **discord.js** (`commands/`), and shows the reply the way Discord does, including **embeds** (title, description, fields, footer, colour) and ephemeral replies.
+* Files with errors are skipped with a clear warning instead of breaking the whole chat.
+
+### <img src="./cordium-icons/svg/tools.svg" width="18" height="18" valign="middle" /> Visual Bot Tools
+* **Slash command builder**, **Embed builder** (live preview) and **Components builder** (button / select menu / modal) generate ready-to-paste Python or JavaScript.
+* **Ready-made modules:** Moderation (`/kick`, `/ban`, `/timeout`, `/purge`), Server & user info, Welcome messages, added to your project in one click.
+* **Invite link and Intents calculator** with permission checkboxes and privileged-intent warnings.
+* **`.env` manager:** values of `TOKEN`, `SECRET`, `KEY`, `PASSWORD` variables are hidden in the form, and `.gitignore` is updated to protect `.env`. A **token guard** warns when something that looks like a Discord token is saved in a normal source file.
+
+### <img src="./cordium-icons/svg/workspace.svg" width="18" height="18" valign="middle" /> Workspace
+* **Hide / show the file explorer** (click, or `Ctrl+B`). Panels resize, and below 760 px the explorer becomes a floating overlay so the code keeps its width.
+* **Bot outline** (commands, events, cogs), project-wide **search and replace**, **Git** actions and branch display, **Format document** (black / prettier if installed), word wrap, **Zen mode**, auto-save and an optional **auto-restart on save**.
+* Open a project straight from a shell: `cordium .` or `cordium /path/to/bot`.
+
+### <img src="./cordium-icons/svg/terminal.svg" width="18" height="18" valign="middle" /> Terminal and Running
+* **Real interactive terminal** (PTY) with `pip`, `npm`, `git`, and password prompts, hidden until you click *Terminal* (or press ``Ctrl+` ``). A separate **Output** tab shows your bot's logs, with a dot on the button when something new (or an error) arrives while the panel is closed.
+* **Install dependencies** creates a `.venv` for Python projects or runs `npm install`.
 
 ---
 
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23FEE75C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/><polyline points='7 10 12 15 17 10'/><line x1='12' y1='15' x2='12' y2='3'/></svg>" valign="middle" /> Download & Install
+## Themes and Fonts
 
-Select the native binary build corresponding to your desktop environment:
+<div align="center">
+  <img src="https://raw.githubusercontent.com/GwenAsa/cordium-ide/main/cordium-icons/Cordium_ Neon Discord IDE Showcase.png" alt="Cordium themes showcase" width="100%" />
+</div>
 
-| Platform | Format | Build Version | Download Link |
+**18 themes** with a visual picker (rail button or palette: *Choose theme*):
+
+| Category | Presets |
+| :--- | :--- |
+| **Discord** | `Discord Dark`, `Midnight`, `Discord Light` |
+| **Developer favourites** | `Dracula`, `Nord`, `Tokyo Night`, `Monokai`, `One Dark`, `GitHub Dark`, `GitHub Light`, `Catppuccin Mocha` |
+| **Vibrant and specialised** | `Cyberpunk`, `Synthwave`, `Gruvbox`, `Rosé Pine`, `Solarized Dark`, `Solarized Light`, `Ocean` |
+
+**Fonts** (button `Aa`): code fonts *Source Code Pro* (default), *IBM Plex Mono*, *Fira Code*, *Roboto Mono*, *JetBrains Mono*; interface fonts *Noto Sans* (default), *Nunito Sans*, *Inter*; *Vazirmatn* is used as a fallback for Arabic/Persian text. Code ligatures are **off** by default and can be switched on.
+
+---
+
+## <img src="./cordium-icons/svg/download.svg" width="22" height="22" valign="middle" /> Download & Install
+
+| Platform | Format | Version | Download |
 | :--- | :--- | :--- | :--- |
-| **Linux** | `.deb` | `v0.5.0` | [Download for Linux](https://github.com/GwenAsa/cordium-ide/releases) |
----
+| **Linux** (Debian, Ubuntu, Zorin OS, ...) | `.deb` | `v0.7.0` | [Releases](https://github.com/GwenAsa/cordium-ide/releases) |
 
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%2357F287' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z'/><path d='m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z'/></svg>" valign="middle" /> Getting Started
+```bash
+sudo apt install ./Cordium_0.7.0_amd64.deb
+cordium            # or start it from the application menu
+```
 
-1. **Download & Launch:** Run the lightweight installer for your platform.
-2. **Initialize Workspace:** Click **PY** or **JS** in the left navigation sidebar to instantiate a production-ready bot template (`discord.py` Cogs or `discord.js` v14 Command Handler).
-3. **Provision Runtime:** Click **Install Dependencies** in the top action panel to auto-build `.venv` or execute `npm install`.
-4. **Configure Secrets:** Insert your Bot Application Token into the generated `.env` file *(Cordium Token Guard will automatically obscure it)*.
-5. **Execute & Test:** Press **`F5`** to launch your bot. Open **Test Chat** to test slash commands locally!
+**Requirements:** `python3` (Python intelligence, Test Chat and running Python bots) and Node.js 20.6+ (to run discord.js bots). Optional: `black` and `prettier` for *Format document*.
 
 ---
 
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%235865F2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='2' y='4' width='20' height='16' rx='2'/><path d='M6 8h.01'/><path d='M10 8h.01'/><path d='M14 8h.01'/><path d='M18 8h.01'/><path d='M8 12h.01'/><path d='M12 12h.01'/><path d='M16 12h.01'/><path d='M7 16h10'/></svg>" valign="middle" /> Shortcuts & Cheatsheet
+## <img src="./cordium-icons/svg/rocket.svg" width="22" height="22" valign="middle" /> Getting Started
 
-| Keybinding | Command Function |
+1. **Create a project:** click **PY** or **JS** in the left rail and pick an empty folder. You get a discord.py project (cogs, `/ping`) or a discord.js v14 project (command handler, `/ping`).
+2. **Install dependencies:** palette (`Ctrl+Shift+P`) &rarr; *Install dependencies*.
+3. **Add your token:** key button in the rail (`.env` manager). Never put the token in source files.
+4. **Test without Discord:** open **Test Chat** (chat button in the rail), click a command chip and press Enter.
+5. **Run for real:** press **`F5`**. Logs appear in the *Output* tab of the terminal panel.
+
+---
+
+## Memory & Light mode
+
+| State | Approx. RAM |
 | :--- | :--- |
-| `Ctrl + P` / `Ctrl + Shift + P` | Open Command Palette & Quick File Search |
-| `F5` | Launch / Restart Active Bot Process |
-| `Ctrl + B` | Toggle File Manager Workspace Sidebar |
-| `Ctrl + \`` | Toggle Integrated PTY Terminal |
-| `Alt + Z` | Toggle Soft Word Wrapping |
-| `Ctrl + S` | Save Active Buffer |
-| `Ctrl + +` / `Ctrl + -` | Adjust Workspace Zoom Level |
+| Idle (welcome screen) | ~350 MB, mostly the system web view |
+| Python file open (Jedi running) | ~560 MB |
+| JavaScript / TypeScript file open (language service running) | ~630 MB |
+
+Measured in a virtual display with software rendering, so use them as a guide. To save memory run palette &rarr; **Toggle smart code intelligence / light mode** and restart Cordium: the heavy engines are not started, and completion falls back to a small built-in list of common discord.py / discord.js names.
 
 ---
 
-## <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%2357F287' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/><path d='m9 12 2 2 4-4'/></svg>" valign="middle" /> License
+## <img src="./cordium-icons/svg/keys.svg" width="22" height="22" valign="middle" /> Shortcuts
 
-Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full details.
+| Keybinding | Function |
+| :--- | :--- |
+| `Ctrl+P` / `Ctrl+Shift+P` | Command palette and quick file open |
+| `F5` | Run the bot |
+| `Ctrl+S` | Save |
+| `Ctrl+B` | Show / hide the file explorer |
+| ``Ctrl+` `` | Show / hide the terminal |
+| `Ctrl+Shift+F` | Search in project |
+| `Alt+Shift+F` | Format document |
+| `Alt+Z` | Toggle word wrap |
+| `Ctrl+Alt+Z` | Zen mode |
+| `Ctrl` + `+` / `-` / `0` | Editor font size |
+| `F1` | List of shortcuts |
+
+---
+
+## <img src="./cordium-icons/svg/build.svg" width="22" height="22" valign="middle" /> Build from Source
+
+Requirements: Node.js 20+, Rust stable (1.90 or newer), and on Debian/Ubuntu:
+
+```bash
+sudo apt install libwebkit2gtk-4.1-dev build-essential libssl-dev libxdo-dev libayatana-appindicator3-dev librsvg2-dev
+```
+
+```bash
+npm install
+npm run tauri dev                       # run in development
+npm run tauri build -- --bundles deb    # produces src-tauri/target/release/bundle/deb/*.deb
+```
+
+Project layout:
+
+```
+src/                  UI (vanilla JS + CodeMirror 6): editor, panels, builders, Test Chat, themes
+src/ts-worker.js      TypeScript language service (Web Worker)
+src/intel.js          completion / hover clients (Jedi + TypeScript)
+src/modules/          ready-made bot modules (py + js)
+src-tauri/src/        Rust shell: files, process runner, PTY, Jedi bridge
+src-tauri/resources/  vendored Jedi, Parso and discord.py source
+public/types/         bundled discord.js / Node / ES typings
+scripts/              refresh-python-intel.sh, refresh-types-bundle.mjs
+```
+
+Pushing a tag such as `v0.7.1` runs `.github/workflows/release.yml`, which builds the `.deb` and attaches it to the release.
+
+---
+
+## <img src="./cordium-icons/svg/alert.svg" width="22" height="22" valign="middle" /> Known Limitations
+
+* Linux `.deb` only for now (no Windows / macOS builds, no AppImage yet).
+* Test Chat uses a fake interaction: it does not reproduce real permissions, latency, voice, or button / select / modal rendering, and Discord timestamp markup (`<t:...:R>`) is shown as raw text. Always do a final run against a real test server.
+* discord.js completion uses the bundled typings (v14.27.0), not the version in your project's `node_modules`.
+* The first Python completion after opening a project can take a few seconds while Jedi warms up.
+* The window title bar is the system one.
+
+---
+
+## <img src="./cordium-icons/svg/shield.svg" width="22" height="22" valign="middle" /> License
+
+Distributed under the **MIT License**, see [`LICENSE`](./LICENSE). Bundled third-party components and their licenses are listed in [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md). Cordium is an independent project and is not affiliated with Discord Inc.
 
 <div align="center">
   <br />
-  <sub>Crafted for the Discord Developer Community.</sub>
+  <sub>Crafted for the Discord developer community.</sub>
 </div>
